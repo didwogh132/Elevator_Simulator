@@ -16,7 +16,6 @@ void ElevatorCar::pushHallPickup(const HallCall& hc){
     if (hc.dir==Dir::Up) m_upTargets.insert(hc.floor);
     else                 m_downTargets.insert(hc.floor);
 
-    // 목적층이 미리 알려졌다면 "간단화"로 바로 내부 목적지에 추가(실제론 탑승 후가 맞지만 데모 편의상)
     if (hc.dest>0) {
         (hc.dest > hc.floor ? m_upTargets : m_downTargets).insert(hc.dest);
     }
