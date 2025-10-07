@@ -1,6 +1,6 @@
 # Elevator Simulator (Qt/QML)
 
-Qt Quick(QML)로 만든 **엘리베이터 시뮬레이터**입니다.  
+Qt 6 + C++ 기반으로 제작된 **엘리베이터 시뮬레이터**입니다.  
 실시간 틱 루프, 호출 배정(스케줄러), 탑승/하차, 층별 대기열 시각화를 제공합니다.  
 UI는 **표 형태**(좌: 층수, 상단: 엘리베이터 헤더)로, 각 카의 **현재 층/문 상태/탑승 인원(예: 5 / 10)** 을 한눈에 확인할 수 있습니다.
 
@@ -26,9 +26,33 @@ UI는 **표 형태**(좌: 층수, 상단: 엘리베이터 헤더)로, 각 카의
 
 ---
 
-### 요구 사항
-- Qt 6.7 (Qt Quick, Qt Quick Controls, Qt Quick Layouts)
-- C++17
+## 🧩 Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| Language | C++17 |
+| Framework | Qt 6.7.3 (MSVC 2022 64bit) |
+| UI | Qt Quick / QML |
+| Build System | CMake + Visual Studio 2022 |
+| Packaging | windeployqt (Windows) |
+
+---
+
+## 💾 Installation & Run
+
+### 1️⃣ 다운로드
+[👉 **Latest Release (Elevator_Simulator_win_x64.zip)**](https://github.com/didwogh132/Elevator_Simulator/releases/latest)  
+Releases 페이지에서 최신 버전을 다운로드합니다.
+
+### 2️⃣ 실행
+1. 압축을 해제합니다.  
+2. 폴더 안의 `Elevator_Simulator.exe`를 실행합니다.  
+3. 별도의 Qt 설치 없이 바로 실행 가능합니다.  
+
+> ⚠️ `Elevator_Simulator.exe`는 **dist 폴더 전체 구성**을 포함해야 정상 실행됩니다.  
+> (`Qt6Core.dll`, `Qt6Gui.dll`, `platforms/qwindows.dll` 등이 함께 있어야 합니다.)
+
+---
 
 ## 🏗️ 파일별 역할 (플랫 구조)
 
