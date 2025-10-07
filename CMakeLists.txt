@@ -11,30 +11,24 @@ find_package(Qt6 REQUIRED COMPONENTS Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appuntitled
-
+    src/main.cpp
+    src/core/Building.cpp
+    src/core/ElevatorCar.cpp
+    src/core/Scheduler.cpp
+    src/core/PassengerGen.cpp
+    src/core/Metrics.cpp
+    src/core/SimClock.cpp
 )
+
+target_include_directories(appuntitled PRIVATE src/core)
 
 qt_add_qml_module(appuntitled
     URI ElevatorSim
     VERSION 1.0
     QML_FILES
-        Main.qml
-        SOURCES
-        SOURCES Building.h
-        SOURCES ElevatorCar.h
-        SOURCES Scheduler.h
-        SOURCES PassengerGen.h
-        SOURCES Metrics.h
-        SOURCES SimClock.h
-        SOURCES Building.cpp
-        SOURCES ElevatorCar.cpp
-        SOURCES Scheduler.cpp
-        SOURCES PassengerGen.cpp
-        SOURCES Metrics.cpp
-        SOURCES SimClock.cpp
-        QML_FILES BuildingView.qml
-        QML_FILES ControlsPane.qml
-        SOURCES main.cpp
+        qml/Main.qml
+        qml/BuildingView.qml
+        qml/ControlsPane.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
